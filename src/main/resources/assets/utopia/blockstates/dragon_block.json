@@ -1,6 +1,6 @@
 {
   "variants": {
     "dragon=0": {"model": "utopia:block/dragon_block_model_0"},
-    "dragon=1": {"model": "utopia:block/dragon_block_model_0"}
+    "dragon=1": {"model": "utopia:block/dragon_block_model_1"}
   }
 }

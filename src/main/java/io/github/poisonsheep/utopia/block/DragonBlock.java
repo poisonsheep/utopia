@@ -14,7 +14,7 @@ public class DragonBlock extends Block {
 
     public DragonBlock() {
         super(BlockBehaviour.Properties.of(Material.STONE).dynamicShape().sound(SoundType.WET_GRASS).requiresCorrectToolForDrops().strength(0.2F).friction(0.9F));
-        this.registerDefaultState(this.defaultBlockState().setValue(STATE, 1));
+        this.registerDefaultState(this.defaultBlockState().setValue(STATE, 0));
     }
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState>builder){
