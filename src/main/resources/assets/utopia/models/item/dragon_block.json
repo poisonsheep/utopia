@@ -1,3 +1,6 @@
 {
-  "parent": "utopia:block/dragon_block_model"
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "utopia:item/dragon_food"
+  }
 }

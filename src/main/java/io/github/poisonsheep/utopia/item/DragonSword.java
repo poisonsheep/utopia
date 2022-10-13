@@ -19,7 +19,7 @@ public class DragonSword extends SwordItem {
 
         @Override
         public float getAttackDamageBonus() {
-            return 1;
+            return 10;
         }
 
         @Override
@@ -40,6 +40,7 @@ public class DragonSword extends SwordItem {
     };
 
     public DragonSword() {
-        super(tier,3,-2.4F,new Item.Properties().tab(CreativeModeTab.TAB_COMBAT));
+        //前面那个参数是攻击伤害，后面是攻击速度
+        super(tier,10,-2.4F,new Item.Properties().tab(CreativeModeTab.TAB_COMBAT));
     }
 }

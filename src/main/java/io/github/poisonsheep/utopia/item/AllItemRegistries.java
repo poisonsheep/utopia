@@ -18,4 +18,6 @@ public class AllItemRegistries {
 
     public static final RegistryObject<Item> DRAGON_BLOCK = ITEMS.register("dragon_block",()-> new BlockItem(AllBlockRegistries.DRAGON_BLOCK.get(),new Item.Properties().tab(ModTab.TAB_UTOPIA)));
 
+    public static final RegistryObject<Item> DOMINATOR_BLOCK = ITEMS.register("dominator_block",()-> new BlockItem(AllBlockRegistries.DOMINATOR_BLOCK.get(),new Item.Properties().tab(ModTab.TAB_UTOPIA)));
+
 }
