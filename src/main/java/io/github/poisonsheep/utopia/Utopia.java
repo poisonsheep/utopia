@@ -2,6 +2,7 @@ package io.github.poisonsheep.utopia;
 
 import io.github.poisonsheep.utopia.block.AllBlockRegistries;
 
+import io.github.poisonsheep.utopia.entity.AllEntityRegistries;
 import io.github.poisonsheep.utopia.item.AllItemRegistries;
 import io.github.poisonsheep.utopia.tileentity.AllTileEntityRegistries;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -15,9 +16,14 @@ public class Utopia {
     public final static String MODID = "utopia";
     public Utopia(){
         GeckoLib.initialize();
+
         AllBlockRegistries.BLOCKS.register(modBusEvent);
+
         AllItemRegistries.ITEMS.register(modBusEvent);
-        AllTileEntityRegistries.BLOCK_ENTITY_TYPE_DEFERRED_REGISTER.register(modBusEvent);
+
+        AllTileEntityRegistries.BLOCK_ENTITY.register(modBusEvent);
+
+        AllEntityRegistries.ENTITIES.register(modBusEvent);
 
 
      }
