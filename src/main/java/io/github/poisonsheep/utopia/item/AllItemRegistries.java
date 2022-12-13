@@ -5,7 +5,6 @@ import io.github.poisonsheep.utopia.Utopia;
 import io.github.poisonsheep.utopia.block.AllBlockRegistries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -20,4 +19,7 @@ public class AllItemRegistries {
 
     public static final RegistryObject<Item> DOMINATOR_BLOCK = ITEMS.register("dominator_block",()-> new BlockItem(AllBlockRegistries.DOMINATOR_BLOCK.get(),new Item.Properties().tab(ModTab.TAB_UTOPIA)));
 
+    public static final RegistryObject<Item> DRAGON_CHEST_BLOCK = ITEMS.register("dragon_chest_block",()->new BlockItem(AllBlockRegistries.DRAGON_CHEST_BLOCK.get(),new Item.Properties().tab(ModTab.TAB_UTOPIA)));
+
+    public static final RegistryObject<Item> DOMINATOR = ITEMS.register("dominator",()->new Dominator());
 }

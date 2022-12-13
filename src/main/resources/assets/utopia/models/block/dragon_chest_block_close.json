@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "utopia:block/dragon_block_texture_1"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "open=false":{"model": "utopia:block/dragon_chest_block_close"},
+    "open=true": {"model": "utopia:block/dominator_block_model"}
+  }
+}
