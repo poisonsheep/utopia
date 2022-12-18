@@ -6,27 +6,27 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
-public class LzayoiSakuyaEntity extends Animal {
+public class LzayoiSakuyaEntity extends Wolf {
 
 
-    protected LzayoiSakuyaEntity(EntityType<? extends Animal> type, Level worldIn) {
+    public LzayoiSakuyaEntity(EntityType<? extends Wolf> type, Level worldIn) {
         super(type, worldIn);
     }
 
     @Override
     protected void registerGoals(){
-        this.goalSelector.addGoal(0,new RandomLookAroundGoal(this));
-    }
 
-    @Nullable
-    @Override
-    public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
-        return null;
+        this.goalSelector.addGoal(8,new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(1,new FloatGoal(this));
+        this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1.0D));
     }
 
     public static AttributeSupplier.Builder prepareAttributes() {

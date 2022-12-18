@@ -16,7 +16,7 @@ public class AllEntityRegistries {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, Utopia.MODID);
 
     public static final RegistryObject<EntityType<LzayoiSakuyaEntity>> LZAYOI_SAKUYA_ENTITY = ENTITIES.register("lzayoi_sakuya_entity",()->EntityType.Builder.of(LzayoiSakuyaEntity::new, MobCategory.CREATURE)
-            .sized(0.6f, 1.95f)
+            .sized(0.6f, 0.6f)
             .clientTrackingRange(8)
             .setShouldReceiveVelocityUpdates(false)
             .build("lzayoi_sakuya_entity"));
