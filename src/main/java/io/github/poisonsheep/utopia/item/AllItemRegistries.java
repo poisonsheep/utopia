@@ -31,4 +31,6 @@ public class AllItemRegistries {
     public static final RegistryObject<Item> DOMINATOR = ITEMS.register("dominator",()->new Dominator());
 
     public static final RegistryObject<Item> LZAYOI_SAKUYA_EGG = ITEMS.register("lzayoi_sakuya_egg",()->new ForgeSpawnEggItem(AllEntityRegistries.LZAYOI_SAKUYA_ENTITY,9093009, 4390912, new Item.Properties().tab(ModTab.TAB_UTOPIA)));
+
+    public static final RegistryObject<Item> ARBITER_SWORD = ITEMS.register("arbiter_sword",()->new ArbiterSword());
 }

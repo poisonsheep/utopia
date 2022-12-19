@@ -6,7 +6,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 
 
 public class DragonSword extends SwordItem {
-    private static Tier tier = new Tier(){
+    private static final Tier tier = new Tier(){
         @Override
         public int getUses() {
             return 2000;
