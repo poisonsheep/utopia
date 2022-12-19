@@ -2,7 +2,6 @@ package io.github.poisonsheep.utopia.item;
 
 import io.github.poisonsheep.utopia.ModTab;
 import io.github.poisonsheep.utopia.client.render.RenderArbiterSword;
-import io.github.poisonsheep.utopia.client.render.RenderDominator;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
