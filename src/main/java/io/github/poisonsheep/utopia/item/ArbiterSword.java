@@ -4,10 +4,13 @@ import io.github.poisonsheep.utopia.ModTab;
 import io.github.poisonsheep.utopia.client.render.RenderArbiterSword;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.IItemRenderProperties;
 import org.jetbrains.annotations.Nullable;
@@ -84,4 +87,9 @@ public class ArbiterSword extends SwordItem implements IAnimatable {
     public AnimationFactory getFactory() {
         return this.factory;
     }
+
+    @Override
+    public void releaseUsing(ItemStack stack, Level worldIn, LivingEntity entityLiving, int timeLeft){
+    }
 }
+
