@@ -837,7 +837,7 @@
 			}
 		},
 		"TRIGGER3": {
-			"animation_length": 10000,
+			"animation_length": 1.6667,
 			"bones": {
 				"bone4": {
 					"rotation": {

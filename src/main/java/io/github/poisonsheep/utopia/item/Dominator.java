@@ -16,6 +16,7 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.client.IItemRenderProperties;
 import net.minecraftforge.network.PacketDistributor;
+import org.checkerframework.checker.units.qual.A;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -62,14 +63,16 @@ public class Dominator extends Item implements IAnimatable, ISyncable {
     }
 
 
-    public <P extends Item & IAnimatable> PlayState predicate(AnimationEvent<P> event) {
+    public <P extends Item & IAnimatable> PlayState predicate1(AnimationEvent<P> event) {
         return PlayState.CONTINUE;
     }
+    public <P extends Item & IAnimatable> PlayState predicate2(AnimationEvent<P> event) { return PlayState.CONTINUE; }
+
 
     @Override
     public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController(this, ULOCKED_CONTROLLER, 1, this::predicate));
-        data.addAnimationController(new AnimationController(this, LOCKED_CONTROLLER, 1, this::predicate));
+        data.addAnimationController(new AnimationController(this, ULOCKED_CONTROLLER, 4, this::predicate1));
+        data.addAnimationController(new AnimationController(this, LOCKED_CONTROLLER, 4, this::predicate2));
     }
 
     @Override
@@ -89,6 +92,7 @@ public class Dominator extends Item implements IAnimatable, ISyncable {
         if(state == LOCKED){
             controller2.markNeedsReload();
             controller2.setAnimation(new AnimationBuilder().addAnimation("TRIGGER3", EDefaultLoopTypes.PLAY_ONCE));
+            controller1.setAnimation(new AnimationBuilder().playOnce("TRIGGER3"));
         }
     }
 
@@ -110,17 +114,12 @@ public class Dominator extends Item implements IAnimatable, ISyncable {
     @Override
     public void releaseUsing(ItemStack stack, Level world, LivingEntity entity, int timeleft) {
         Player player = (Player) entity;
+        player.getCooldowns().addCooldown(this, 60);
         if (!world.isClientSide) {
             final int id = GeckoLibUtil.guaranteeIDForStack(stack, (ServerLevel) world);
             final PacketDistributor.PacketTarget target = PacketDistributor.TRACKING_ENTITY_AND_SELF.with(() -> player);
             GeckoLibNetwork.syncAnimation(target, this, id, LOCKED);
         }
-    }
-
-
-    @Override
-    public boolean isFoil(ItemStack stack) {
-        return false;
     }
 
     //alex生物给的办法，还没弄懂，
